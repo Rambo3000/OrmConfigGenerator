@@ -11,8 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ISSUE_TEMPLATE\**" />
+    <EmbeddedResource Remove="ISSUE_TEMPLATE\**" />
+    <None Remove="ISSUE_TEMPLATE\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="CODE_OF_CONDUCT.md" />
+    <None Remove="CONTRIBUTING.md" />
     <None Remove="LICENSE" />
+    <None Remove="PULL_REQUEST_TEMPLATE.md" />
+    <None Remove="README.md" />
+    <None Remove="SECURITY.md" />
   </ItemGroup>
 
   <ItemGroup>
