@@ -39,14 +39,18 @@ namespace OrmConfigGenerator.XmlParser
                     foreach (var attributeElem in attributes)
                     {
                         BlueriqDataType dataType = BlueriqDataType.Boolean;
-                        if (attributeElem.Attribute("DataType")?.Value == "Number") dataType = BlueriqDataType.Number;
-                        else if (attributeElem.Attribute("DataType")?.Value == "Currency") dataType = BlueriqDataType.Currency;
-                        else if (attributeElem.Attribute("DataType")?.Value == "String") dataType = BlueriqDataType.Text;
-                        else if (attributeElem.Attribute("DataType")?.Value == "Integer") dataType = BlueriqDataType.Integer;
-                        else if (attributeElem.Attribute("DataType")?.Value == "Date") dataType = BlueriqDataType.Date;
-                        else if (attributeElem.Attribute("DataType")?.Value == "DateTime") dataType = BlueriqDataType.DateTime;
-                        else if (attributeElem.Attribute("DataType")?.Value == "Percentage") dataType = BlueriqDataType.Percentage;
-                        else if (attributeElem.Attribute("DataType")?.Value == "Boolean") dataType = BlueriqDataType.Boolean;
+                        string? dataTypeString = attributeElem.Attribute("DataType")?.Value;
+                        //There are other attribut elements in the XML which should not be used
+                        if (dataTypeString == null) continue;
+
+                        if (dataTypeString == "Number") dataType = BlueriqDataType.Number;
+                        else if (dataTypeString == "Currency") dataType = BlueriqDataType.Currency;
+                        else if (dataTypeString == "String") dataType = BlueriqDataType.Text;
+                        else if (dataTypeString == "Integer") dataType = BlueriqDataType.Integer;
+                        else if (dataTypeString == "Date") dataType = BlueriqDataType.Date;
+                        else if (dataTypeString == "DateTime") dataType = BlueriqDataType.DateTime;
+                        else if (dataTypeString == "Percentage") dataType = BlueriqDataType.Percentage;
+                        else if (dataTypeString == "Boolean") dataType = BlueriqDataType.Boolean;
 
                         Blueriq.Attribute attribute = new(
                             attributeElem.Attribute("Name")?.Value ?? "?",
@@ -54,7 +58,10 @@ namespace OrmConfigGenerator.XmlParser
                             bool.Parse(attributeElem.Attribute("MultiValued")?.Value ?? "false")
                         );
 
-                        string entityName = attributeElem.Attribute("Entity")?.Value ?? "";
+                        string? entityName = attributeElem.Attribute("Entity")?.Value;
+                        //There are other attribut elements in the XML which should not be used
+                        if (entityName == null) continue;
+
                         if (!entities.TryGetValue(entityName, out Entity? entity))
                         {
                             entity = new(entityName);
