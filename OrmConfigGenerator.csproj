@@ -1,5 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -8,14 +7,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>Icons\database-cog-outline-custom colored.ico</ApplicationIcon>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Company>Robert de Volder</Company>
+    <Copyright>Copyright (C) 2024 Robert de Volder</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
+    <Version>1.0.1</Version>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PackageIcon>database-cog-outline-custom colored.png</PackageIcon>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="ISSUE_TEMPLATE\**" />
     <EmbeddedResource Remove="ISSUE_TEMPLATE\**" />
     <None Remove="ISSUE_TEMPLATE\**" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove=".gitignore" />
     <None Remove="CODE_OF_CONDUCT.md" />
@@ -25,9 +29,13 @@
     <None Remove="README.md" />
     <None Remove="SECURITY.md" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="Icons\database-cog-outline-custom colored.ico" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Update="Icons\database-cog-outline-custom colored.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 </Project>
