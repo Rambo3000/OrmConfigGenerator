@@ -48,7 +48,8 @@ namespace OrmConfigGenerator
 
             // Set the initial values
             chkAttributeName.Text = this.attribute.Name;
-            lblBlueriqType.Text = attribute.BlueriqDataType + " →";
+            string multiValue = attribute.MultiValued ? " (multivalued)" : "";
+            lblBlueriqType.Text = attribute.BlueriqDataType + multiValue + " →";
             cboOracleDataType.SelectedItem = this.attribute.OracleDataType.ToString();
 
             if (attribute.BlueriqDataType == BlueriqDataType.Integer)

@@ -46,7 +46,7 @@
             cboOracleDataType.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cboOracleDataType.DropDownStyle = ComboBoxStyle.DropDownList;
             cboOracleDataType.FormattingEnabled = true;
-            cboOracleDataType.Location = new Point(107, 0);
+            cboOracleDataType.Location = new Point(207, 0);
             cboOracleDataType.Name = "cboOracleDataType";
             cboOracleDataType.Size = new Size(86, 23);
             cboOracleDataType.TabIndex = 1;
@@ -55,7 +55,7 @@
             // txtPrecisionBefore
             // 
             txtPrecisionBefore.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtPrecisionBefore.Location = new Point(233, 0);
+            txtPrecisionBefore.Location = new Point(333, 0);
             txtPrecisionBefore.Name = "txtPrecisionBefore";
             txtPrecisionBefore.Size = new Size(48, 23);
             txtPrecisionBefore.TabIndex = 2;
@@ -63,7 +63,7 @@
             // txtPrecisionAfter
             // 
             txtPrecisionAfter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtPrecisionAfter.Location = new Point(287, 0);
+            txtPrecisionAfter.Location = new Point(387, 0);
             txtPrecisionAfter.Name = "txtPrecisionAfter";
             txtPrecisionAfter.Size = new Size(48, 23);
             txtPrecisionAfter.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             lblSize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblSize.AutoSize = true;
-            lblSize.Location = new Point(200, 3);
+            lblSize.Location = new Point(300, 3);
             lblSize.Name = "lblSize";
             lblSize.Size = new Size(27, 15);
             lblSize.TabIndex = 4;
@@ -92,7 +92,7 @@
             // txtSize
             // 
             txtSize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtSize.Location = new Point(233, 0);
+            txtSize.Location = new Point(333, 0);
             txtSize.Name = "txtSize";
             txtSize.Size = new Size(48, 23);
             txtSize.TabIndex = 7;
@@ -108,16 +108,17 @@
             pnlOptions.Controls.Add(txtPrecisionAfter);
             pnlOptions.Controls.Add(lblSize);
             pnlOptions.Controls.Add(lblSeperator);
-            pnlOptions.Location = new Point(73, -1);
+            pnlOptions.Location = new Point(156, -1);
             pnlOptions.Name = "pnlOptions";
-            pnlOptions.Size = new Size(374, 26);
+            pnlOptions.Size = new Size(474, 26);
             pnlOptions.TabIndex = 8;
             pnlOptions.Visible = false;
             // 
             // chkPrimaryKey
             // 
+            chkPrimaryKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             chkPrimaryKey.AutoSize = true;
-            chkPrimaryKey.Location = new Point(341, 2);
+            chkPrimaryKey.Location = new Point(441, 2);
             chkPrimaryKey.Name = "chkPrimaryKey";
             chkPrimaryKey.Size = new Size(40, 19);
             chkPrimaryKey.TabIndex = 9;
@@ -126,9 +127,10 @@
             // 
             // lblBlueriqType
             // 
-            lblBlueriqType.Location = new Point(20, -1);
+            lblBlueriqType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblBlueriqType.Location = new Point(12, -1);
             lblBlueriqType.Name = "lblBlueriqType";
-            lblBlueriqType.Size = new Size(85, 23);
+            lblBlueriqType.Size = new Size(193, 23);
             lblBlueriqType.TabIndex = 8;
             lblBlueriqType.Text = "→";
             lblBlueriqType.TextAlign = ContentAlignment.MiddleRight;
@@ -137,7 +139,7 @@
             // 
             lblSeperator.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblSeperator.AutoSize = true;
-            lblSeperator.Location = new Point(280, 3);
+            lblSeperator.Location = new Point(380, 3);
             lblSeperator.Name = "lblSeperator";
             lblSeperator.Size = new Size(10, 15);
             lblSeperator.TabIndex = 10;
@@ -151,7 +153,7 @@
             Controls.Add(chkAttributeName);
             Controls.Add(pnlOptions);
             Name = "UsrAttribute";
-            Size = new Size(447, 22);
+            Size = new Size(630, 22);
             pnlOptions.ResumeLayout(false);
             pnlOptions.PerformLayout();
             ResumeLayout(false);
