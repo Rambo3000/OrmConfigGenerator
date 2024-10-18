@@ -50,9 +50,9 @@
             txtLiquibaseScript = new RichTextBox();
             tabPage2 = new TabPage();
             txtORMScheme = new RichTextBox();
-            btnGenerate = new Button();
             tabPage3 = new TabPage();
             txtOracleSql = new RichTextBox();
+            btnGenerate = new Button();
             grpCheckBoxSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -264,7 +264,6 @@
             txtLiquibaseScript.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtLiquibaseScript.Location = new Point(3, 31);
             txtLiquibaseScript.Name = "txtLiquibaseScript";
-            txtLiquibaseScript.ReadOnly = true;
             txtLiquibaseScript.Size = new Size(416, 495);
             txtLiquibaseScript.TabIndex = 0;
             txtLiquibaseScript.Text = "";
@@ -286,21 +285,10 @@
             txtORMScheme.Dock = DockStyle.Fill;
             txtORMScheme.Location = new Point(3, 3);
             txtORMScheme.Name = "txtORMScheme";
-            txtORMScheme.ReadOnly = true;
             txtORMScheme.Size = new Size(416, 523);
             txtORMScheme.TabIndex = 1;
             txtORMScheme.Text = "";
             txtORMScheme.WordWrap = false;
-            // 
-            // btnGenerate
-            // 
-            btnGenerate.Location = new Point(7, 16);
-            btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(150, 28);
-            btnGenerate.TabIndex = 2;
-            btnGenerate.Text = "Generate";
-            btnGenerate.UseVisualStyleBackColor = true;
-            btnGenerate.Click += BtnGenerate_Click;
             // 
             // tabPage3
             // 
@@ -317,11 +305,20 @@
             txtOracleSql.Dock = DockStyle.Fill;
             txtOracleSql.Location = new Point(0, 0);
             txtOracleSql.Name = "txtOracleSql";
-            txtOracleSql.ReadOnly = true;
             txtOracleSql.Size = new Size(422, 529);
             txtOracleSql.TabIndex = 2;
             txtOracleSql.Text = "";
             txtOracleSql.WordWrap = false;
+            // 
+            // btnGenerate
+            // 
+            btnGenerate.Location = new Point(7, 16);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(150, 28);
+            btnGenerate.TabIndex = 2;
+            btnGenerate.Text = "Generate";
+            btnGenerate.UseVisualStyleBackColor = true;
+            btnGenerate.Click += BtnGenerate_Click;
             // 
             // FrmOrmConfigGenerator
             // 

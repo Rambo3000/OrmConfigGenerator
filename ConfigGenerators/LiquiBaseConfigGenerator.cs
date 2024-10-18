@@ -41,6 +41,7 @@ namespace OrmConfigGenerator.ConfigGenerators
 
                 sb.AppendLine("\t</createTable>");
                 sb.AppendLine("</changeSet>");
+                sb.AppendLine();
                 changeSetId++;
             }
 
