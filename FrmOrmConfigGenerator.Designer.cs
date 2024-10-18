@@ -51,6 +51,8 @@
             tabPage2 = new TabPage();
             txtORMScheme = new RichTextBox();
             btnGenerate = new Button();
+            tabPage3 = new TabPage();
+            txtOracleSql = new RichTextBox();
             grpCheckBoxSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -60,6 +62,7 @@
             tabSCripts.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             SuspendLayout();
             // 
             // btnBrowse
@@ -202,6 +205,7 @@
             tabSCripts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabSCripts.Controls.Add(tabPage1);
             tabSCripts.Controls.Add(tabPage2);
+            tabSCripts.Controls.Add(tabPage3);
             tabSCripts.Location = new Point(3, 50);
             tabSCripts.Name = "tabSCripts";
             tabSCripts.SelectedIndex = 0;
@@ -298,6 +302,27 @@
             btnGenerate.UseVisualStyleBackColor = true;
             btnGenerate.Click += BtnGenerate_Click;
             // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(txtOracleSql);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(422, 529);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Oracle SQL";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtOracleSql
+            // 
+            txtOracleSql.Dock = DockStyle.Fill;
+            txtOracleSql.Location = new Point(0, 0);
+            txtOracleSql.Name = "txtOracleSql";
+            txtOracleSql.ReadOnly = true;
+            txtOracleSql.Size = new Size(422, 529);
+            txtOracleSql.TabIndex = 2;
+            txtOracleSql.Text = "";
+            txtOracleSql.WordWrap = false;
+            // 
             // FrmOrmConfigGenerator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -318,6 +343,7 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -344,5 +370,7 @@
         private TextBox txtAuthor;
         private Label label2;
         private Label label1;
+        private TabPage tabPage3;
+        private RichTextBox txtOracleSql;
     }
 }

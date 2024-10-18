@@ -1,8 +1,9 @@
 ﻿namespace OrmConfigGenerator.Blueriq
 {
-    public class Attribute(string name, BlueriqDataType blueriqDataType, bool multiValued)
+    public class Attribute(string name, BlueriqDataType blueriqDataType, bool multiValued) : IComparable<Attribute>
     {
         public string Name { get; set; } = name;
+        public string NameOracleSQL { get { return SqlNameConverter.Convert(Name); } }
         public BlueriqDataType BlueriqDataType { get; set; } = blueriqDataType;
         public bool MultiValued { get; set; } = multiValued;
         public OracleDataType OracleDataType 
@@ -41,6 +42,12 @@
         public override string ToString()
         {
             return Name;
+        }
+        public int CompareTo(Attribute? other)
+        {
+            if (other == null) return 1;
+
+            return string.Compare(Name, other.Name, StringComparison.Ordinal);
         }
     }
 }

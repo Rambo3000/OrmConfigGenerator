@@ -52,8 +52,8 @@ namespace OrmConfigGenerator.ConfigGenerators
         {
             if (attribute.OracleDataType == OracleDataType.NUMBER)
             {
-                string precision = attribute.PrecisionBeforeSeperator.HasValue ? attribute.PrecisionBeforeSeperator.Value.ToString() : "?";
-                string scale = attribute.PrecisionAfterSeperator.HasValue ? attribute.PrecisionAfterSeperator.Value.ToString() : "?";
+                string precision = attribute.PrecisionBeforeSeperator.HasValue ? attribute.PrecisionBeforeSeperator.Value.ToString() : "???";
+                string scale = attribute.PrecisionAfterSeperator.HasValue ? attribute.PrecisionAfterSeperator.Value.ToString() : "???";
                 if (!attribute.PrecisionBeforeSeperator.HasValue && !attribute.PrecisionAfterSeperator.HasValue &&
                     (attribute.BlueriqDataType == BlueriqDataType.Number || attribute.BlueriqDataType == BlueriqDataType.Percentage || attribute.BlueriqDataType == BlueriqDataType.Currency))
                 {
@@ -63,7 +63,7 @@ namespace OrmConfigGenerator.ConfigGenerators
             }
             else if (attribute.OracleDataType == OracleDataType.VARCHAR2)
             {
-                string size = attribute.Size.HasValue ? attribute.Size.Value.ToString() : "?";
+                string size = attribute.Size.HasValue ? attribute.Size.Value.ToString() : "???";
                 return $"VARCHAR2({size} CHAR)";
             }
             return attribute.OracleDataType.ToString(); // Default to simple type

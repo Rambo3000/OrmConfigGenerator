@@ -53,7 +53,7 @@ namespace OrmConfigGenerator.XmlParser
                         else if (dataTypeString == "Boolean") dataType = BlueriqDataType.Boolean;
 
                         Blueriq.Attribute attribute = new(
-                            attributeElem.Attribute("Name")?.Value ?? "?",
+                            attributeElem.Attribute("Name")?.Value ?? "???",
                             dataType,
                             bool.Parse(attributeElem.Attribute("MultiValued")?.Value ?? "false")
                         );
@@ -77,7 +77,7 @@ namespace OrmConfigGenerator.XmlParser
                     foreach (var relationsElem in relations)
                     {
                         Relation relation = new(
-                            relationsElem.Attribute("Name")?.Value ?? "?",
+                            relationsElem.Attribute("Name")?.Value ?? "???",
                             bool.Parse(relationsElem.Attribute("MultiValued")?.Value ?? "false")
                         );
 
@@ -100,12 +100,18 @@ namespace OrmConfigGenerator.XmlParser
                         entityFrom.Relations.Add(relation);
                     }
 
+                    module.Entities.Sort();
+                    foreach (Entity entity in module.Entities)
+                    {
+                        entity.Attributes.Sort();
+                        entity.Relations.Sort();
+                    }
                     project.Modules.Add(module);
                 }
-
+                project.Modules.Sort();
                 branch.Projects.Add(project);
             }
-
+            branch.Projects.Sort();
             return branch; // Return the fully populated Branch object
         }
     }

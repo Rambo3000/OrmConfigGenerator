@@ -171,7 +171,12 @@ namespace OrmConfigGenerator
             if (cboModules.SelectedItem is not Module module) return;
 
             txtLiquibaseScript.Text = LiquiBaseConfigGenerator.GenerateLiquiBaseScript(module, txtAuthor.Text, txtChangeSetId.Text);
+            txtLiquibaseScript.HighlightQuestionMarks();
             txtORMScheme.Text = OrmSchemaGenerator.Generate(module);
+            txtLiquibaseScript.HighlightQuestionMarks();
+            txtOracleSql.Text = OracleSqlGenerator.GenerateOracleSqlScript(module);
+            txtOracleSql.HighlightQuestionMarks();
+
         }
         
         private void FlowLayoutPanel_SizeChanged(object sender, EventArgs e)

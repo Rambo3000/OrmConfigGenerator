@@ -7,7 +7,7 @@ namespace OrmConfigGenerator
         // Helper method to convert camelCase or PascalCase to SQL-style names
         public static string Convert(string input)
         {
-            StringBuilder result = new StringBuilder();
+            StringBuilder result = new();
             for (int i = 0; i < input.Length; i++)
             {
                 if (i > 0 && char.IsUpper(input[i]) && !char.IsUpper(input[i - 1]))
