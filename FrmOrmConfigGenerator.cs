@@ -17,6 +17,15 @@ namespace OrmConfigGenerator
         {
             InitializeComponent();
 
+            string version = Application.ProductVersion;
+            const string versionSeperator = "+";
+            if (version.Contains(versionSeperator))
+            {
+                version = version[..version.IndexOf(versionSeperator)];
+            }
+
+            lblVersion.Text = "v" + version;
+
             resizeTimer = new()
             {
                 Interval = 500
@@ -48,7 +57,7 @@ namespace OrmConfigGenerator
 
                 cboProjects.Items.Add(project);
             }
-            if (cboProjects.Items.Count > 0) cboProjects.SelectedIndex = 0;
+            if (cboProjects.Items.Count == 1) cboProjects.SelectedIndex = 0;
         }
 
         public void Clear()
@@ -84,7 +93,8 @@ namespace OrmConfigGenerator
             if (project.Modules.Count == 0) return;
 
             cboModules.Items.AddRange([.. project.Modules]);
-            if (cboModules.Items.Count > 0) cboModules.SelectedIndex = 0;
+
+            if (cboModules.Items.Count == 1) cboModules.SelectedIndex = 0;
         }
 
         private void CboModules_SelectedIndexChanged(object sender, EventArgs e)

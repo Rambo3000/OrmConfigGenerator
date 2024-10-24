@@ -41,6 +41,7 @@
             grpCheckBoxSelection = new GroupBox();
             splitContainer1 = new SplitContainer();
             groupBox1 = new GroupBox();
+            lblVersion = new Label();
             tabSCripts = new TabControl();
             tabPage1 = new TabPage();
             txtChangeSetId = new TextBox();
@@ -190,6 +191,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblVersion);
             groupBox1.Controls.Add(tabSCripts);
             groupBox1.Controls.Add(btnGenerate);
             groupBox1.Dock = DockStyle.Fill;
@@ -199,6 +201,16 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Generate scripts";
+            // 
+            // lblVersion
+            // 
+            lblVersion.ForeColor = Color.Silver;
+            lblVersion.Location = new Point(381, 9);
+            lblVersion.Name = "lblVersion";
+            lblVersion.Size = new Size(53, 15);
+            lblVersion.TabIndex = 10;
+            lblVersion.Text = "Version";
+            lblVersion.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tabSCripts
             // 
@@ -369,5 +381,6 @@
         private Label label1;
         private TabPage tabPage3;
         private RichTextBox txtOracleSql;
+        private Label lblVersion;
     }
 }

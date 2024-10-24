@@ -40,8 +40,10 @@ namespace OrmConfigGenerator.XmlParser
                     {
                         BlueriqDataType dataType = BlueriqDataType.Boolean;
                         string? dataTypeString = attributeElem.Attribute("DataType")?.Value;
+                        string? entityName = attributeElem.Attribute("Entity")?.Value;
+
                         //There are other attribut elements in the XML which should not be used
-                        if (dataTypeString == null) continue;
+                        if (dataTypeString == null || entityName == null) continue;
 
                         if (dataTypeString == "Number") dataType = BlueriqDataType.Number;
                         else if (dataTypeString == "Currency") dataType = BlueriqDataType.Currency;
@@ -58,10 +60,6 @@ namespace OrmConfigGenerator.XmlParser
                             bool.Parse(attributeElem.Attribute("MultiValued")?.Value ?? "false")
                         );
 
-                        string? entityName = attributeElem.Attribute("Entity")?.Value;
-                        //There are other attribut elements in the XML which should not be used
-                        if (entityName == null) continue;
-
                         if (!entities.TryGetValue(entityName, out Entity? entity))
                         {
                             entity = new(entityName);
@@ -76,6 +74,8 @@ namespace OrmConfigGenerator.XmlParser
                     var relations = moduleElem.Descendants("Relation");
                     foreach (var relationsElem in relations)
                     {
+                        if (relationsElem.Attribute("MultiValued")?.Value == null) continue;
+
                         Relation relation = new(
                             relationsElem.Attribute("Name")?.Value ?? "???",
                             bool.Parse(relationsElem.Attribute("MultiValued")?.Value ?? "false")
