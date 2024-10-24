@@ -35,11 +35,10 @@ namespace OrmConfigGenerator
 
         private void BtnBrowse_Click(object sender, EventArgs e)
         {
-            Clear();
-
             string? filename = GetFileNameFromDialog();
             if (filename == null) return;
 
+            Clear();
             lblFilename.Text = filename;
             Branch branch = BlueriqExportParser.ParseXmlToBranch(filename);
             PopulateTrunkAndProjects(branch);
@@ -63,7 +62,10 @@ namespace OrmConfigGenerator
         public void Clear()
         {
             lblBranchValue.Text = "";
+            lblFilename.Text = "";
             cboProjects.Items.Clear();
+            cboModules.Items.Clear();
+            flowLayoutPanel1.Controls.Clear();
         }
 
         public static string? GetFileNameFromDialog()

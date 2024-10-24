@@ -170,7 +170,7 @@
             grpCheckBoxSelection.Size = new Size(433, 610);
             grpCheckBoxSelection.TabIndex = 10;
             grpCheckBoxSelection.TabStop = false;
-            grpCheckBoxSelection.Text = "Select entties and attributs from Blueriq export";
+            grpCheckBoxSelection.Text = "Select entities and attributes from Blueriq export";
             // 
             // splitContainer1
             // 
@@ -243,7 +243,7 @@
             // 
             txtChangeSetId.Location = new Point(244, 3);
             txtChangeSetId.Name = "txtChangeSetId";
-            txtChangeSetId.Size = new Size(100, 23);
+            txtChangeSetId.Size = new Size(127, 23);
             txtChangeSetId.TabIndex = 8;
             // 
             // txtAuthor
