@@ -20,7 +20,10 @@ namespace OrmConfigGenerator.XmlParser
             var projects = branchContent.Descendants("Project");
             foreach (var projectElem in projects)
             {
+                // Checks if the minimal required elements are available
                 if (projectElem.Attribute("Name") != null) continue;
+                if (!projectElem.Descendants("Project").Any()) continue;
+                if (!projectElem.Descendants("Content").Any()) continue;
 
                 Project project = new(projectElem.Descendants("Project").First().Attribute("Name")?.Value ?? "");
 
