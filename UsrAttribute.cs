@@ -29,7 +29,7 @@ namespace OrmConfigGenerator
             txtPrecisionBefore.TextChanged += TxtPrecision_TextChanged;
             txtPrecisionAfter.TextChanged += TxtPrecision_TextChanged;
 
-            attribute = new("",BlueriqDataType.Integer, false);
+            attribute = new(string.Empty, BlueriqDataType.Integer, false, string.Empty, string.Empty);
         }
 
         // Pass the attribute to the user control and populate the fields

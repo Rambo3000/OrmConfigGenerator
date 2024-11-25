@@ -1,6 +1,6 @@
 ﻿namespace OrmConfigGenerator.Blueriq
 {
-    public class Attribute(string name, BlueriqDataType blueriqDataType, bool multiValued) : IComparable<Attribute>
+    public class Attribute(string name, BlueriqDataType blueriqDataType, bool multiValued, string questionText, string description) : IComparable<Attribute>
     {
         public string Name { get; set; } = name;
         public string NameOracleSQL { get { return SqlNameConverter.Convert(Name); } }
@@ -35,6 +35,8 @@
         public bool UseClob { get; set; } = false;
         public bool IsPrimaryKey { get; set; } = false;
         public bool UseForExport { get; set; } = false;
+        public string QuestionText { get; set; } = questionText;
+        public string Description { get; set; } = description;
         public int? Size { get; set; } // For VARCHAR2
         public int? PrecisionBeforeSeperator { get; set; } // For NUMBER(x,y)
         public int? PrecisionAfterSeperator { get; set; } // For NUMBER(x,y)

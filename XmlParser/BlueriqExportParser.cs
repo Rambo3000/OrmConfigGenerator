@@ -60,7 +60,9 @@ namespace OrmConfigGenerator.XmlParser
                         Blueriq.Attribute attribute = new(
                             attributeElem.Attribute("Name")?.Value ?? "???",
                             dataType,
-                            bool.Parse(attributeElem.Attribute("MultiValued")?.Value ?? "false")
+                            bool.Parse(attributeElem.Attribute("MultiValued")?.Value ?? "false"),
+                            attributeElem.Element("QuestionText")?.Value.Replace(Environment.NewLine, " ") ?? string.Empty,
+                            attributeElem.Element("Description")?.Value.Replace(Environment.NewLine, " ") ?? string.Empty
                         );
 
                         if (!entities.TryGetValue(entityName, out Entity? entity))

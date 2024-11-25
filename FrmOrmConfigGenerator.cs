@@ -188,7 +188,7 @@ namespace OrmConfigGenerator
             txtLiquibaseScript.HighlightQuestionMarks();
             txtOracleSql.Text = OracleSqlGenerator.GenerateOracleSqlScript(module);
             txtOracleSql.HighlightQuestionMarks();
-
+            txtDocumentation.Text = DocumentationGenerator.GenerateDocumentationDatabase(module);
         }
         
         private void FlowLayoutPanel_SizeChanged(object sender, EventArgs e)

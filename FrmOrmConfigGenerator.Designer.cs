@@ -54,6 +54,8 @@
             tabPage3 = new TabPage();
             txtOracleSql = new RichTextBox();
             btnGenerate = new Button();
+            tabDocumentation = new TabPage();
+            txtDocumentation = new RichTextBox();
             grpCheckBoxSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -64,6 +66,7 @@
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
+            tabDocumentation.SuspendLayout();
             SuspendLayout();
             // 
             // btnBrowse
@@ -204,6 +207,7 @@
             // 
             // lblVersion
             // 
+            lblVersion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblVersion.ForeColor = Color.Silver;
             lblVersion.Location = new Point(381, 9);
             lblVersion.Name = "lblVersion";
@@ -218,6 +222,7 @@
             tabSCripts.Controls.Add(tabPage1);
             tabSCripts.Controls.Add(tabPage2);
             tabSCripts.Controls.Add(tabPage3);
+            tabSCripts.Controls.Add(tabDocumentation);
             tabSCripts.Location = new Point(3, 50);
             tabSCripts.Name = "tabSCripts";
             tabSCripts.SelectedIndex = 0;
@@ -332,6 +337,26 @@
             btnGenerate.UseVisualStyleBackColor = true;
             btnGenerate.Click += BtnGenerate_Click;
             // 
+            // tabDocumentation
+            // 
+            tabDocumentation.Controls.Add(txtDocumentation);
+            tabDocumentation.Location = new Point(4, 24);
+            tabDocumentation.Name = "tabDocumentation";
+            tabDocumentation.Size = new Size(422, 529);
+            tabDocumentation.TabIndex = 3;
+            tabDocumentation.Text = "Documentation";
+            tabDocumentation.UseVisualStyleBackColor = true;
+            // 
+            // txtDocumentation
+            // 
+            txtDocumentation.Dock = DockStyle.Fill;
+            txtDocumentation.Location = new Point(0, 0);
+            txtDocumentation.Name = "txtDocumentation";
+            txtDocumentation.Size = new Size(422, 529);
+            txtDocumentation.TabIndex = 3;
+            txtDocumentation.Text = "";
+            txtDocumentation.WordWrap = false;
+            // 
             // FrmOrmConfigGenerator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -353,6 +378,7 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
+            tabDocumentation.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -382,5 +408,7 @@
         private TabPage tabPage3;
         private RichTextBox txtOracleSql;
         private Label lblVersion;
+        private TabPage tabDocumentation;
+        private RichTextBox txtDocumentation;
     }
 }

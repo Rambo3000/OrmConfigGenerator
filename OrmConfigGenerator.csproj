@@ -10,8 +10,8 @@
     <Company>Robert de Volder</Company>
     <Copyright>Copyright (C) 2024 Robert de Volder</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.5</FileVersion>
-    <Version>1.0.5</Version>
+    <FileVersion>1.0.6</FileVersion>
+    <Version>1.0.6</Version>
     <PublishSingleFile>true</PublishSingleFile>
     <PackageIcon>database-cog-outline-custom colored.png</PackageIcon>
   </PropertyGroup>
