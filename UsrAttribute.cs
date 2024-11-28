@@ -1,5 +1,6 @@
 ﻿using OrmConfigGenerator.Blueriq;
 using Attribute = OrmConfigGenerator.Blueriq.Attribute;
+using System.ComponentModel;
 
 namespace OrmConfigGenerator
 {
@@ -9,6 +10,7 @@ namespace OrmConfigGenerator
 
         private Attribute attribute;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Checked
         {
             get

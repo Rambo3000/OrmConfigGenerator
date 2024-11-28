@@ -8,7 +8,7 @@ namespace OrmConfigGenerator.ConfigGenerators
     {
         public static string GenerateDocumentationDatabase(Module module)
         {
-            if (module == null || module.Entities == null || !module.Entities.Any())
+            if (module == null || module.Entities == null || module.Entities.Count == 0)
                 return "Geen entiteiten beschikbaar in de module.";
 
             StringBuilder documentation = new();
