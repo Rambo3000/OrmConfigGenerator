@@ -6,7 +6,6 @@ using Attribute = OrmConfigGenerator.Blueriq.Attribute;
 using Branch = OrmConfigGenerator.Blueriq.Branch;
 using CheckBox = System.Windows.Forms.CheckBox;
 
-
 namespace OrmConfigGenerator
 {
     public partial class FrmOrmConfigGenerator : Form
@@ -190,7 +189,7 @@ namespace OrmConfigGenerator
             txtOracleSql.HighlightQuestionMarks();
             txtDocumentation.Text = DocumentationGenerator.GenerateDocumentationDatabase(module);
         }
-        
+
         private void FlowLayoutPanel_SizeChanged(object sender, EventArgs e)
         {
             // Reset the timer every time the resize event is triggered

@@ -1,9 +1,5 @@
 ﻿using OrmConfigGenerator.Blueriq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Attribute = OrmConfigGenerator.Blueriq.Attribute;
 
 namespace OrmConfigGenerator.ConfigGenerators

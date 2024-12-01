@@ -1,6 +1,6 @@
 ﻿using OrmConfigGenerator.Blueriq;
-using Attribute = OrmConfigGenerator.Blueriq.Attribute;
 using System.ComponentModel;
+using Attribute = OrmConfigGenerator.Blueriq.Attribute;
 
 namespace OrmConfigGenerator
 {
@@ -195,8 +195,8 @@ namespace OrmConfigGenerator
             if (attribute.OracleDataType == OracleDataType.NUMBER)
             {
                 // Validate PrecisionBeforeSeparator
-                if (string.IsNullOrEmpty(txtPrecisionBefore.Text) && string.IsNullOrEmpty(txtPrecisionAfter.Text) && 
-                    (attribute.BlueriqDataType == BlueriqDataType.Currency|| attribute.BlueriqDataType == BlueriqDataType.Percentage|| attribute.BlueriqDataType == BlueriqDataType.Number))
+                if (string.IsNullOrEmpty(txtPrecisionBefore.Text) && string.IsNullOrEmpty(txtPrecisionAfter.Text) &&
+                    (attribute.BlueriqDataType == BlueriqDataType.Currency || attribute.BlueriqDataType == BlueriqDataType.Percentage || attribute.BlueriqDataType == BlueriqDataType.Number))
                 {
                     txtPrecisionBefore.BackColor = SystemColors.Window;
                     txtPrecisionAfter.BackColor = SystemColors.Window;

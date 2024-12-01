@@ -1,6 +1,6 @@
 ﻿namespace OrmConfigGenerator.Blueriq
 {
-    public class Entity (string name) : IComparable<Entity>
+    public class Entity(string name) : IComparable<Entity>
     {
         public string Name { get; set; } = name;
         public string NameOracleSQL { get { return SqlNameConverter.Convert(Name); } }

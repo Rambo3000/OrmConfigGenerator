@@ -6,9 +6,9 @@
         public string NameOracleSQL { get { return SqlNameConverter.Convert(Name); } }
         public BlueriqDataType BlueriqDataType { get; set; } = blueriqDataType;
         public bool MultiValued { get; set; } = multiValued;
-        public OracleDataType OracleDataType 
-        { 
-            get 
+        public OracleDataType OracleDataType
+        {
+            get
             {
                 //Lists should always be stored concatinated in a string like column
                 if (MultiValued) return UseClob ? OracleDataType.CLOB : OracleDataType.VARCHAR2;
